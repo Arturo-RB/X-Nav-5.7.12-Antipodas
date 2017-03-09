@@ -1,25 +1,26 @@
+<!DOCTYPE html>	
 <html>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
 	<head>
  		<title>Las Antipodas</title>
-		<style>
-			#map {
-				width:500px;
-				height: 400px;
-			}
- 		</style>
+ 		<link rel="stylesheet" type="text/css" href="map.css">
+ 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
  	</head>
 	<body>
-        	<p id='map'></p>
-  	        <script type="text/javascript" charset="utf-8">
-            function initMap(){
-                var mapDiv = document.getElementById("map");
-				var map = new google.maps.Map(mapDiv, {
-					center: {lat: 40.283743650362996, lng: -3.8191530513763428},
-					zoom: 15
-				});
- 			}
- 		</script>
-		<script src = "https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+		<div class="container">
+		    <div class="row">
+		    	<div class="col-md-6">
+			    	<h2>Mapa con ubicacion actual</h2>
+					<div id="map"></div>
+				</div>
+				<div class="col-md-6">
+					<h2>Mapa con antipoda</h2>
+					<div id="map2"></div>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+		<script src = "https://maps.googleapis.com/maps/api/js?callback=get_location" async defer></script>
+		<script type="text/javascript" src="antipodas.js"></script>
 	</body>
 </html>
